@@ -1,1 +1,78 @@
-1.hello word!
+int a = 0;
+while(a == 0)
+{
+Console.WriteLine("請輸入名字:");
+string nam = Console.ReadLine();
+Console.WriteLine("請輸入性別: \n 1.男生 2.女生");
+string sex = Console.ReadLine();
+if (sex == "1")
+{
+  sex = "男生";
+}
+else
+{
+  sex= "女生";
+}
+Console.WriteLine("請輸入出生年月日:");
+string bir = Console.ReadLine();
+Console.WriteLine("請輸入學號:");
+string num = Console.ReadLine();
+Console.WriteLine("--------------------");
+Console.WriteLine("姓名:" + nam);
+Console.WriteLine("性別:" + sex);
+Console.WriteLine("生日:" + bir);
+Console.WriteLine("學號:" + num);
+Console.WriteLine("--------------------");
+Console.Write("請問上述資料是否正確 \n 正確請輸入1 錯誤請輸入2 \n");
+a = int.Parse(Console.ReadLine());
+do
+{
+if (a == 1)
+{
+    Console.WriteLine("已完成資料建設");
+    return;
+}
+else
+{
+    Console.WriteLine("請重新開始詢問基本資料填寫");
+    Console.WriteLine("請選擇要修改的選項: \n 1.姓名 2.性別 3.生日 4.學號");
+    int restart = int.Parse(Console.ReadLine());
+    if (restart == 1)
+    {
+      Console.Write("請輸入名字:");
+      nam = Console.ReadLine();
+    }
+    else if (restart == 2)
+    {
+      Console.Write("請輸入性別(1.男生 2.女生):\n");
+      sex = Console.ReadLine();
+      if (sex == "1")
+      {
+        sex = "男生";
+      }
+      else
+      {
+        sex= "女生";
+      }
+    }
+    else if (restart == 3)
+    {
+      Console.Write("請輸入出生年月日:\n");
+      bir = Console.ReadLine();
+    }
+    else
+    {
+      Console.Write("請輸入學號:\n");
+      num = Console.ReadLine();
+    }
+    Console.WriteLine("--------------------");
+    Console.WriteLine("姓名:" + nam);
+    Console.WriteLine("性別:" + sex);
+    Console.WriteLine("生日:" + bir);
+    Console.WriteLine("學號:" + num);
+    Console.Write("請問上述資料是否正確\n正確請輸入1 錯誤請輸入2\n");
+    a = int.Parse(Console.ReadLine());
+    }
+
+}while (true);
+}
